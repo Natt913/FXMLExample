@@ -1,3 +1,6 @@
+//Nathalie Crespo
+//Code taken from Oracle to complete this tutorial.
+
 package fxmlexample;
 
 import javafx.application.Application;
