@@ -12,7 +12,7 @@
   styleClass="root">
   <fx:script>
     function handleSubmitButtonAction() {
-      actiontarget.setText("Calling the JavaScript");
+      actiontarget.setText("Database not setup, sorry~");
     }
      </fx:script>
 
