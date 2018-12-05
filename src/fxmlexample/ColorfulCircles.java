@@ -23,7 +23,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import static java.lang.Math.random;
 
-
+//Must extend from Application
 public class ColorfulCircles extends Application {
 
   public static void main(String[] args) {
@@ -44,6 +44,7 @@ public class ColorfulCircles extends Application {
       circle.setStrokeWidth(4);
       circles.getChildren().add(circle);
     }
+    //Creating positions and colors of the circles
     Rectangle colors = new Rectangle(scene.getWidth(), scene.getHeight(),
         new LinearGradient(0f, 1f, 1f, 0f, true, CycleMethod.NO_CYCLE, new Stop[]{
             new Stop(0, Color.web("#f8bd55")),
@@ -65,14 +66,17 @@ public class ColorfulCircles extends Application {
     Timeline timeline = new Timeline();
     for (Node circle : circles.getChildren()) {
       timeline.getKeyFrames().addAll(
-          new KeyFrame(Duration.ZERO, // set start position at 0
+          // set start position at 0
+          new KeyFrame(Duration.ZERO,
               new KeyValue(circle.translateXProperty(), random() * 800),
               new KeyValue(circle.translateYProperty(), random() * 600)),
-          new KeyFrame(new Duration(40000), // set end position at 40s
+          // set end position at 40s
+          new KeyFrame(new Duration(40000),
               new KeyValue(circle.translateXProperty(), random() * 800),
               new KeyValue(circle.translateYProperty(), random() * 600)));
     }
-    // play 40s of animation
+
+    //40s of animation
     timeline.play();
     primaryStage.show();
   }
